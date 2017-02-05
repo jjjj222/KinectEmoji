@@ -1,0 +1,94 @@
+﻿<Page
+    x:Class="KinectEmoji.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KinectEmoji"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Unloaded="Page_Unloaded">
+
+    <!--<Border BorderBrush="Black" BorderThickness="10">-->
+    <Grid Background="White">
+        <Viewbox>
+            <Grid Width="3000" Height="1580">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1080" />
+                    <RowDefinition Height="500" />
+                        <!--<RowDefinition Height="500" /> -->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1920" />
+                    <ColumnDefinition Width="1080" />
+                        <!--<ColumnDefinition Width="500" /> -->
+                </Grid.ColumnDefinitions>
+
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="0"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="1"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1"/>
+
+
+                    <Grid Grid.Row="0" Grid.Column="0">
+                    <Image Name="camera"/>
+                    <Canvas Name="canvas">
+                        <Ellipse Name="ellipseEyeLeft" Style="{StaticResource EyeStyle}" />
+                        <Ellipse Name="ellipseEyeRight" Style="{StaticResource EyeStyle}" />
+                        <!--<Ellipse Name="ellipseNose" Style="{StaticResource NoseStyle}" />-->
+                        <!--<Ellipse Name="ellipseMouth" Style="{StaticResource MouthStyle}" />-->
+                    </Canvas>
+                    </Grid>
+
+                    <!-- <ScrollViewer Name="sysLogViewer" Grid.Row="1" Grid.Column="0">
+                    <TextBlock Name="sysLog" Text="log start" Foreground="Black" FontSize="70" TextWrapping="Wrap"/>
+                    </ScrollViewer> -->
+
+                    <Grid Grid.Row="0" Grid.Column="1">
+                        <Image Name="emoji"/>
+                        <Viewbox >
+
+                            <!--<Border BorderBrush="Red" BorderThickness="10">-->
+                                <Canvas Name="canvasHD" Width="512" Height="424">
+                                    <!--<Line
+                                    X1="10" Y1="10"
+                                    X2="50" Y2="50"
+                                    Stroke="Black"
+                                    StrokeThickness="4" /> -->
+                                </Canvas>
+                            <!--</Border>-->
+                        </Viewbox>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1160" />
+                            <ColumnDefinition Width="760" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Name="info" Text="qq" Foreground="Black" FontSize="40"/>
+                        <TextBlock Grid.Column="1" Name="infoNormal" Text="ooo" Foreground="Black" FontSize="40"/>
+                    </Grid>
+                    <!--
+                    <Grid Grid.Row="2">
+                        <TextBlock Grid.Row="0" Name="tmp" Text="tmp" Foreground="Black" FontSize="50"/>
+                    </Grid>-->
+
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="540" />
+                            <ColumnDefinition Width="540" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="1" Content="Record" Width ="540" Height="540" FontSize="70" Background="Gray" Foreground="Black" Click="Record_Button_Click"/>
+                        <Grid Grid.Column="0">
+                            <Border BorderBrush="Black" BorderThickness="1">
+                                <TextBox Name="tags" Text="Specify Emoji Type To Save Here" TextWrapping="Wrap" TextAlignment="Center" Width ="500" Height="500" FontSize="70" Foreground="Black" />
+                            </Border>
+                        </Grid>
+                    </Grid>
+
+
+                </Grid>
+        </Viewbox>
+    </Grid>
+    <!--</Border>-->
+</Page>
